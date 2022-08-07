@@ -233,7 +233,11 @@ Data_BT = Data_WI %&gt;%
 <pre><code># In-built aov
 anova.1 &lt;- aov(Y ~ BW_Fac1, Data_BT)
 model.tables(anova.1, &quot;means&quot;)
-summary(anova.1)</code></pre>
+summary(anova.1)
+
+anova.1.1 &lt;- aov(Y ~ BW_Fac1 + Error(subjects), Data_WI)
+summary(anova.1.1)
+</code></pre>
 </div>
 <div id="car-package-aov" class="section level4">
 <h4>1.1.2 car package aov</h4>
@@ -257,6 +261,9 @@ ezanova.1</code></pre>
 anova.2 &lt;- aov(Y ~ BW_Fac1*BW_Fac2, Data_BT)
 model.tables(anova.2, &quot;means&quot;)
 summary(anova.2)
+
+anova.2.1 &lt;- aov(Y ~ BW_Fac1*BW_Fac2 + Error(subjects), Data_WI)
+summary(anova.2.1)
 </code></pre>
 </div>
 <div id="car-package-aov-1" class="section level4">
